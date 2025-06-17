@@ -4,6 +4,18 @@ import pandas as pd
 from langchain_experimental.agents import create_pandas_dataframe_agent
 from langchain.llms import OpenAI
 from dotenv import load_dotenv
+from zipfile import ZipFile
+
+# Unzip CSV files
+# loading the temp.zip and creating a zip object
+try:
+    with ZipFile("202401_NFs.zip", 'r') as zObject:
+        # Extracting all the members of the zip 
+        # into a specific location.
+        zObject.extractall(path="data")
+except Exception:
+    st.error("Não foi possível descompactar os arquivos CSV.")
+    st.stop()
 
 # Load env vars (if using .env)
 load_dotenv()
@@ -29,7 +41,7 @@ def load_merged_data():
     
 try:
     df = load_merged_data()
-except ExceptionType:
+except Exception:
     st.error("Não foi possível ler os arquivos CSV.")
     st.stop()
 
