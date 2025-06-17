@@ -1,8 +1,5 @@
 # Agentes Autônomos – Análise de CSV
-#### Grupo Agentes 150:
 ![Grupo Agentes 150](logo.jpg "Grupo Agentes 150")
-
-_Versão: 07/06/2025_
 
 Integrantes:
 | Nome | E-mail | Telefone |
